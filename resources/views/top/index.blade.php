@@ -18,6 +18,12 @@
     <main>
         <h2 v-html="title"></h2>
         <button v-on:click="buttonClick">変更</button>
+
+        <form action="">
+            <p v-html=validateResult></p>
+            <input type="text" name="name" v-model="name">
+            <button type="button" v-on:click="validate">ひらがな確認</button>
+        </form>
     </main>
 </body>
 <script src="/js/build/top/index.js"></script>

@@ -3,13 +3,27 @@ import { ref } from "vue";
 
 const application = {
     setup() {
+        const name = ref("");
+        const validateResult = ref("");
+
         const title = ref("vue test title.");
+        
         let buttonClick = function() {
             title.value = "value update.";
         }
+
+        let validate = function () {
+            let isKana = name.value.match(/^[あーんー ]*$/);
+            validateResult.value = isKana ? "正常" : "ひらがな以外が入力されています。"
+        };
+
         return {
             title,
             buttonClick,
+
+            name,
+            validateResult,
+            validate,
         };
     },
 };
