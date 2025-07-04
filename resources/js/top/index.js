@@ -1,5 +1,6 @@
 import * as Vue from "vue";
 import { ref } from "vue";
+import SampleComponent from "./SampleComponent.vue";
 
 const application = {
     setup() {
@@ -31,6 +32,10 @@ const application = {
             page, // 追加
         };
     },
+
+    components : {
+        "sample-component" : SampleComponent,
+    }
 };
 
 try {
